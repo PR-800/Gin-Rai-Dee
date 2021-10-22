@@ -25,6 +25,25 @@ def words():
             'กินๆไปเถอะ อ้วนแค่ไหนเธอก็น่ารัก : ', 'กินๆไปเถอะ อ้วนแค่ไหนก็เป็นแฟนเรา : ']
     return words
 
+def sweets(order):
+    """สุ่มขนมหวาน"""
+    if order == 'sweet':
+        ans = ['เค้กไข่ไต้หวัน', 'ทองหยอด', 'ทองหยิบ', 'ฝอยทอง', 'ขนมชั้น', 'ขนมต้ม',\
+                'ขนมเบื้อง', 'บัตเตอร์เค้ก', 'เค้กฝอยทองใบเตย', 'เค้กชาไทยหน้านิ่ม',\
+                'เค้กชิฟฟ่อนช็อกโกแลต', 'เค้กชิฟฟ่อนใบเตย','เค้กทุเรียน', 'เค้กช็อกโกแลตหน้านิ่ม',\
+                'เค้กฝอยทองลาวา', 'เค้กกล้วยหอม', 'เค้กมะพร้าวอ่อนครีมสด', 'เค้กกาแฟ',\
+                'เครปเค้ก', 'คัพเค้กเรดเวลเวท', 'ทองม้วน', 'ขนมปลากริม', 'บัวลอย',\
+                'ครองแครง', 'หม้อแกง', 'สังขยามะพร้าวอ่อน','ขนมฟักทอง', 'ขนมมันม่วง', \
+                'ข้าวเหนียวมะม่วง', 'วุ้นมะพร้าว', 'ไอศกรีมกะทิสด']
+    elif order == 'drinks':
+        ans = ['กาแฟ', 'ชาเย็น', 'ชานมเย็น', 'โกโก้', 'นมเปรี้ยว', 'ชาอูหลง',\
+                'น้ำส้ม', 'น้ำมะนาว', 'แชมเปญ', 'ชาไข่มุก', 'Bahamas Punch', \
+                'Spiced Pineapple Cooler', 'Lychee Spritzer',\
+                'Pomegranate Sparkle', 'Blue Thyme', 'Life Hacker',
+                'Upside Down Blue Lemonade', 'รัมเสาวรส',\
+                'น้ำเสาวรส', 'น้ำทับทิม', 'น้ำมะพร้าว', 'น้ำเบอร์รี่', 'น้ำแครอท']
+    return ans
+
 def main():
     """Function Gin-Rai-Dee : Waiter bot"""
     import random
@@ -46,6 +65,12 @@ def main():
             await message.channel.send(random.choice(words()) + random.choice(savory('rice')))
         if message.content == '-gin เส้น':
             await message.channel.send(random.choice(words()) + random.choice(savory('noodles')))
+        if message.content == '-gin อาหารหวาน':
+            await message.channel.send('เลือกแบบไหนดี ขนมหวาน / เครื่องดื่ม')
+        if message.content == '-gin ขนมหวาน':
+            await message.channel.send(random.choice(words()) + random.choice(sweets('sweet')))
+        if message.content == '-gin เครื่องดื่ม':
+            await message.channel.send(random.choice(words()) + random.choice(sweets('drinks')))
 
     bot.run(token)
 main()
