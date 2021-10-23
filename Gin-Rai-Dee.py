@@ -44,6 +44,14 @@ def sweets(order):
                 'น้ำเสาวรส', 'น้ำทับทิม', 'น้ำมะพร้าว', 'น้ำเบอร์รี่', 'น้ำแครอท']
     return ans
 
+def sticker():
+    """สุ่มสติ๊กเกอร์"""
+    ans = [' ｡◕‿◕｡', ' ⊙ω⊙', ' 😝', ' 💝', ' 😊', ' 💞', ' 🤩', ' 🥰', ' 💟', ' 💕', \
+        ' 😋', ' 😍', ' 😘', ' 🤪', ' 😳', ' 😻', ' 🥰', ' 😀', ' 😃', ' 😄', ' 😁',\
+        ' 🧡', ' 💛', ' 💙', ' 💚', ' 💜', ' 💘', ' 💖', ' 🌈', ' ✨', ' 😺', ' 😸',\
+        ' 😎', ' 🤗', ' 🥳', ' 😇', ' 😉', ' 😊', ' ≧０≦', ' ♡^_^♡', '  ◕‿◕✿']
+    return ans
+
 def main():
     """Function Gin-Rai-Dee : Waiter bot"""
     import random
@@ -60,17 +68,17 @@ def main():
     @bot.event
     async def on_message(message):
         if message.content == '-gin อาหารจานเดียว':
-            await message.channel.send('เลือกแบบไหนดี ข้าว / เส้น')
+            await message.channel.send('เลือกแบบไหนดี ข้าว / เส้น' + random.choice(sticker()))
         if message.content == '-gin ข้าว':
-            await message.channel.send(random.choice(words()) + random.choice(savory('rice')))
+            await message.channel.send(random.choice(words()) + random.choice(savory('rice')) + random.choice(sticker()))
         if message.content == '-gin เส้น':
-            await message.channel.send(random.choice(words()) + random.choice(savory('noodles')))
+            await message.channel.send(random.choice(words()) + random.choice(savory('noodles')) + random.choice(sticker()))
         if message.content == '-gin อาหารหวาน':
-            await message.channel.send('เลือกแบบไหนดี ขนมหวาน / เครื่องดื่ม')
+            await message.channel.send('เลือกแบบไหนดี ขนมหวาน / เครื่องดื่ม' + random.choice(sticker()))
         if message.content == '-gin ขนมหวาน':
-            await message.channel.send(random.choice(words()) + random.choice(sweets('sweet')))
+            await message.channel.send(random.choice(words()) + random.choice(sweets('sweet')) + random.choice(sticker()))
         if message.content == '-gin เครื่องดื่ม':
-            await message.channel.send(random.choice(words()) + random.choice(sweets('drinks')))
+            await message.channel.send(random.choice(words()) + random.choice(sweets('drinks')) + random.choice(sticker()))
 
     bot.run(token)
 main()
