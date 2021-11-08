@@ -117,6 +117,9 @@ def main():
     @bot.command()
     async def เครื่องดื่ม(ctx):
         await ctx.send('```' + random.choice(words()) + random.choice(sweets('drinks')) + random.choice(sticker()) + "```")
+       @bot.command()
+    async def buffet(ctx):
+        await ctx.send("```" + random.choice(words()) + random.choice(fbuffet()) + random.choice(sticker()) + "```")
         
     bot.run(token)
 main()
