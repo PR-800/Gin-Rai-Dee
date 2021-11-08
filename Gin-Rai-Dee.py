@@ -59,7 +59,7 @@ def main():
     from discord.ext import commands
 
     token = input()
-    bot = commands.Bot(command_prefix='-gin')
+    bot = commands.Bot(command_prefix = 'g! ')
 
     @bot.event
     async def on_ready():
@@ -67,18 +67,35 @@ def main():
 
     @bot.event
     async def on_message(message):
-        if message.content == '-gin อาหารจานเดียว':
-            await message.channel.send('เลือกแบบไหนดี ข้าว / เส้น' + random.choice(sticker()))
-        if message.content == '-gin ข้าว':
-            await message.channel.send(random.choice(words()) + random.choice(savory('rice')) + random.choice(sticker()))
-        if message.content == '-gin เส้น':
-            await message.channel.send(random.choice(words()) + random.choice(savory('noodles')) + random.choice(sticker()))
-        if message.content == '-gin อาหารหวาน':
-            await message.channel.send('เลือกแบบไหนดี ขนมหวาน / เครื่องดื่ม' + random.choice(sticker()))
-        if message.content == '-gin ขนมหวาน':
-            await message.channel.send(random.choice(words()) + random.choice(sweets('sweet')) + random.choice(sticker()))
-        if message.content == '-gin เครื่องดื่ม':
-            await message.channel.send(random.choice(words()) + random.choice(sweets('drinks')) + random.choice(sticker()))
-
+        await bot.process_commands(message)
+        
+    @bot.command()
+    async def rcm(ctx):
+        await ctx.send('```เราขอแนะนำเมนูเพื่อสุขภาพนี่เลย! : ' + random.choice(healthfood()) + \
+            "\n" + 'หากไม่สนใจโปรดเลือกขั้นตอนถัดไปโดยใช้คำสั่ง \' g! howto \'```')
+    @bot.command()
+    async def howto(ctx):
+        await ctx.send('```ชุดคำสั่งสำหรับเรียกใช้งานบอทจะขึ้นต้นด้วย g! เสมอ โดยจะมีหัวข้อหลักและย่อย ดังนี้\n🍔  g! fastfood\
+            \n🍲  g! buffet\n🍛  g! อาหารจานเดียว\n\t\t- g! ข้าว\n\t\t- g! เส้น\n🍰  g! อาหารหวาน\
+            \n\t\t- g! ขนมหวาน\n\t\t- g! เครื่องดื่ม\n```')
+    @bot.command()
+    async def อาหารจานเดียว(ctx):
+        await ctx.send('```เลือกแบบไหนดีเอ่ย? \' g! ข้าว \' / \' g! เส้น \'```')
+    @bot.command()
+    async def ข้าว(ctx):
+        await ctx.send("```" + random.choice(words()) + random.choice(savory('rice')) + random.choice(sticker()) + "```")
+    @bot.command()
+    async def เส้น(ctx):
+        await ctx.send("```" + random.choice(words()) + random.choice(savory('noodles')) + random.choice(sticker()) + "```")
+    @bot.command()
+    async def อาหารหวาน(ctx):
+        await ctx.send('```เลือกแบบไหนดีเอ่ย? \' ขนมหวาน \' / \' เครื่องดื่ม \'```')
+    @bot.command()
+    async def ขนมหวาน(ctx):
+        await ctx.send('```' + random.choice(words()) + random.choice(sweets('sweet')) + random.choice(sticker()) + '```')
+    @bot.command()
+    async def เครื่องดื่ม(ctx):
+        await ctx.send('```' + random.choice(words()) + random.choice(sweets('drinks')) + random.choice(sticker()) + "```")
+        
     bot.run(token)
 main()
