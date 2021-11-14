@@ -73,6 +73,69 @@ def sticker():
         ' 😎', ' 🤗', ' 🥳', ' 😇', ' 😉', ' 😊', ' ≧０≦', ' ♡^_^♡', '  ◕‿◕✿']
     return ans
 
+#ENGLISH
+def en_sweets(order):
+    """random sweets"""
+    ans = {'sweet' : ['small chocolate cake', 'marble cake', 'pumpkin bread',\
+                'chocolate pound cake', 'soft pumpkin cookies', 'sugar cookies',\
+                'biscoff cookies', 'red velvet cookies','tahini cookies',\
+                'banana cupcakes', 'brownies', 'chocolate', 'caramel slice',\
+                'chocolate coconut slice', 'easter egg rocky road',\
+                'lemon slice', 'easy vanilla cheesecakes', 'sour cream cake', \
+                'classic trifle', 'chocolate bread', 'vegan chocolate cake'], \
+                'drinks' : ['coffee', 'iced tea', 'hot chocolate', 'juice', 'milkshake', 'tea',\
+                'milk', 'green tea', 'chocolate milk', 'smoothie', 'bahamas punch', \
+                'spiced pineapple cooler', 'lychee spritzer', 'coconut milk',\
+                'pomegranate sparkle', 'blue thyme', 'life hacker', 'orange juice',\
+                'upside down blue lemonade', 'lemonade', 'cocoa', 'tea bag']}
+    return ans[order]
+
+def en_words():
+    """random speech"""
+    words = ['Where there is good food, there is happiness : ',\
+            'To live a full life, you have to fill your stomach first : ', \
+            'Food is really and truly the most effective medicine : ',\
+            'They told me to follow my heart. Guess where it led me? To the fridge : ',\
+            'We only live once… Lick the bowl.', 'You can’t live a full life on an empty stomach : ',\
+            'Come on, hog it out! : ', 'There is no “we” in fries. Remember that! : ',
+            'My favorite hobby is eating : ', 'Savor the flavor : ']
+            
+    return words
+
+def en_fastfood():
+    """random fastfood"""
+    fast_food = ['waffle fries', 'double-double', 'fries', 'chicken sandwich', 'curly fries',\
+                'bacon cheeseburger', 'animal style burger', 'mcnuggets', 'cheesy gordita crunch',\
+                'pretzel', 'spicy chicken sandwich', 'chicken tenders', 'biscuits', 'blizzard',\
+                'pizza', 'glazed doughnut', 'mcgriddle', 'subway', 'church\'s chicken honey butter biscuits',\
+                'panda express orange chicken', 'checkers seasoned fries', 'donut', 'big mac']
+    return fast_food
+
+def en_healthfood():
+    """random healthfood"""
+    ans = ['Breakfast Casserole', 'Giada\'s Broiled Salmon with Herb Mustard Glaze', 'Whole30 Bacon and Egg Cups',\
+        'Slow-Cooker Pork Tacos', 'Vegetable Noodle Soup', 'Angel Food Cake', 'Blueberry Compote', 'Giada\'s Chicken Saltimboccaง', \
+        'Spaghetti Squash and Meatballs', 'Ellie\'s Tuscan Vegetable Soup', 'Quinoa Salad', 'Low-Cal Fettuccine Alfredo',\
+        'Giada\'s Chia Seed Pudding', 'Hasselback Sweet Potatoes', ' Beef Stir-Fry', 'Gazpacho', 'Healthy Cauliflower Rice',\
+        'American Macaroni Salad', 'Chicken and Broccoli Stir-Fry', 'Oven-Baked Salmon', 'Ina\'s Roasted Brussels Sprouts']
+    return ans
+
+def en_savory():
+    """random savory"""
+    ans = ['Chilli cheese toats', 'Cheesy Macaroni', 'Spaghetti Bolognese', 'Curry soup', \
+    'Gravy Noodles', 'Spaghetti Carbonara', 'Roast pork', 'Fish and chips', 'Macaroni', \
+    'Meatlolf', 'Meatballs', 'Omelette', 'Oxtail Soup', 'Pasta with truffle cream sauce', \
+    'Bolognese fettuccine', 'mac and cheese']
+    return ans
+
+def en_fbuffet():
+    """random Buffet"""
+    buffet = ['MK', 'Grilled Butter', 'Shabushi', 'Shabu', 'MOMO Paradise'\
+            'Khun Phon Yang Kham', 'King Kong Yakiniku Buffet',\
+            'Oishi Eaterium','barbqplaza', 'Japaness Buffet',\
+            'Suki Teenoi', 'CP-Harbour Resaurant', 'Copper Buffet', 'Daruma']
+    return buffet
+
 def main():
     """Function Gin-Rai-Dee : Waiter bot"""
     import random
