@@ -1,4 +1,5 @@
 """Gin-Rai-Dee : Waiter bot"""
+
 #THAI
 def th_sweets(order):
     """สุ่มขนมหวาน"""
@@ -142,7 +143,7 @@ def main():
     import discord
     from discord.ext import commands
 
-    #token = input()
+    token = input()
     bot = commands.Bot(command_prefix = 'g! ')
     bot.remove_command('help')
 
@@ -161,6 +162,7 @@ def main():
             \nBot commands for Gin-Rai-Dee always begin with g! as follows:\n🥗  g! cleanfood\n🍔  g! fastfood\n🍲  g! buffet\
             \n🍛  g! savory\n🍰  g! sweets\n☕  g! drinks```')
 
+    #THAI
     @bot.command()
     async def อาหารคลีน(ctx):
         await ctx.send('```เราขอแนะนำเมนูเพื่อสุขภาพนี่เลย! : ' + random.choice(th_healthfood()) + random.choice(sticker()) + '```')
@@ -187,5 +189,27 @@ def main():
     async def เครื่องดื่ม(ctx):
         await ctx.send('```' + random.choice(th_words()) + random.choice(th_sweets('drinks')) + random.choice(sticker()) + "```")
 
+    #ENGLISH
+    @bot.command()
+    async def cleanfood(ctx):
+        await ctx.send('```We highly recommend this one! : ' + random.choice(en_healthfood()) + random.choice(sticker()) + '```')
+    @bot.command()
+    async def fastfood(ctx):
+        await ctx.send('```' + random.choice(en_words()) + random.choice(en_fastfood()) + random.choice(sticker()) + "\n" \
+        + "(This kind of food is unhealthy and will negatively affect your health. Don't eat too often <3) ```")
+    @bot.command()
+    async def savory(ctx):
+        await ctx.send("```" + random.choice(en_words()) + random.choice(en_savory()) + random.choice(sticker()) + "```")
+    @bot.command()
+    async def buffet(ctx):
+        await ctx.send("```" + random.choice(en_words()) + random.choice(en_fbuffet()) + random.choice(sticker()) + "```")
+    @bot.command()
+    async def sweets(ctx):
+        await ctx.send('```' + random.choice(en_words()) + random.choice(en_sweets('sweet')) + random.choice(sticker()) + '```')
+    @bot.command()
+    async def drinks(ctx):
+        await ctx.send('```' + random.choice(en_words()) + random.choice(en_sweets('drinks')) + random.choice(sticker()) + "```")
+
     bot.run(token)
+
 main()
