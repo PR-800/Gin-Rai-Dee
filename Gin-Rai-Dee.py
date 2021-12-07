@@ -61,71 +61,49 @@ def sticker():
     return random.choice(result['-MqIH3RgiLZBBgTuVu9J'])
 
 #ENGLISH
-def en_sweets(order):
+def en_sweets():
     """random sweets"""
-    ans = {'sweet' : ['small chocolate cake', 'marble cake', 'pumpkin bread',\
-                'chocolate pound cake', 'soft pumpkin cookies', 'sugar cookies',\
-                'biscoff cookies', 'red velvet cookies','tahini cookies',\
-                'banana cupcakes', 'brownies', 'chocolate', 'caramel slice',\
-                'chocolate coconut slice', 'easter egg rocky road',\
-                'lemon slice', 'easy vanilla cheesecakes', 'sour cream cake', \
-                'classic trifle', 'chocolate bread', 'vegan chocolate cake'], \
-                'drinks' : ['coffee', 'iced tea', 'hot chocolate', 'juice', 'milkshake', 'tea',\
-                'milk', 'green tea', 'chocolate milk', 'smoothie', 'bahamas punch', \
-                'spiced pineapple cooler', 'lychee spritzer', 'coconut milk',\
-                'pomegranate sparkle', 'blue thyme', 'life hacker', 'orange juice',\
-                'upside down blue lemonade', 'lemonade', 'cocoa', 'tea bag']}
-    return ans[order]
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIHMuf_ncVlMR_KpNI'])
+
+def en_drinks():
+    """random drinks"""
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIHb6hxroKZtSNB2i8'])
 
 def en_words():
     """random speech"""
-    words = ['Where there is good food, there is happiness : ',\
-            'To live a full life, you have to fill your stomach first : ', \
-            'Food is really and truly the most effective medicine : ',\
-            'They told me to follow my heart. Guess where it led me? To the fridge : ',\
-            'We only live once… Lick the bowl.', 'You can’t live a full life on an empty stomach : ',\
-            'Come on, hog it out! : ', 'There is no “we” in fries. Remember that! : ',
-            'My favorite hobby is eating : ', 'Savor the flavor : ']
-            
-    return words
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIHmdB6VTNe2IdCHZ4'])
 
 def en_fastfood():
     """random fastfood"""
-    fast_food = ['waffle fries', 'double-double', 'fries', 'chicken sandwich', 'curly fries',\
-                'bacon cheeseburger', 'animal style burger', 'mcnuggets', 'cheesy gordita crunch',\
-                'pretzel', 'spicy chicken sandwich', 'chicken tenders', 'biscuits', 'blizzard',\
-                'pizza', 'glazed doughnut', 'mcgriddle', 'subway', 'church\'s chicken honey butter biscuits',\
-                'panda express orange chicken', 'checkers seasoned fries', 'donut', 'big mac']
-    return fast_food
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqII5U4sMrU8_5Iu5Ik'])
 
 def en_healthfood():
     """random healthfood"""
-    ans = ['Breakfast Casserole', 'Giada\'s Broiled Salmon with Herb Mustard Glaze', 'Whole30 Bacon and Egg Cups',\
-        'Slow-Cooker Pork Tacos', 'Vegetable Noodle Soup', 'Angel Food Cake', 'Blueberry Compote', 'Giada\'s Chicken Saltimboccaง', \
-        'Spaghetti Squash and Meatballs', 'Ellie\'s Tuscan Vegetable Soup', 'Quinoa Salad', 'Low-Cal Fettuccine Alfredo',\
-        'Giada\'s Chia Seed Pudding', 'Hasselback Sweet Potatoes', ' Beef Stir-Fry', 'Gazpacho', 'Healthy Cauliflower Rice',\
-        'American Macaroni Salad', 'Chicken and Broccoli Stir-Fry', 'Oven-Baked Salmon', 'Ina\'s Roasted Brussels Sprouts']
-    return ans
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIIJUdS90Nvd2FdBjR'])
 
 def en_savory():
     """random savory"""
-    ans = ['Chilli cheese toats', 'Cheesy Macaroni', 'Spaghetti Bolognese', 'Curry soup', \
-    'Gravy Noodles', 'Spaghetti Carbonara', 'Roast pork', 'Fish and chips', 'Macaroni', \
-    'Meatlolf', 'Meatballs', 'Omelette', 'Oxtail Soup', 'Pasta with truffle cream sauce', \
-    'Bolognese fettuccine', 'mac and cheese']
-    return ans
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIIdGMKJ_alYMXdAIB'])
 
 def en_fbuffet():
     """random Buffet"""
-    buffet = ['MK', 'Grilled Butter', 'Shabushi', 'Shabu', 'MOMO Paradise'\
-            'Khun Phon Yang Kham', 'King Kong Yakiniku Buffet',\
-            'Oishi Eaterium','barbqplaza', 'Japaness Buffet',\
-            'Suki Teenoi', 'CP-Harbour Resaurant', 'Copper Buffet', 'Daruma']
-    return buffet
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIIpNfAg8vtyf7J7H2'])
+
+def en_fruits():
+    """random Fruit"""
+    result = firebase.get('/TEST DATABASE/FIREBASE', '')
+    return random.choice(result['-MqIN6ZdJnkOTrdH23t4'])
 
 def main():
     """Function Gin-Rai-Dee : Waiter bot"""
-    #token = input()
+    token = input()
     bot = commands.Bot(command_prefix = 'g! ')
     bot.remove_command('help')
 
@@ -178,24 +156,26 @@ def main():
     #ENGLISH
     @bot.command()
     async def cleanfood(ctx):
-        await ctx.send('```We highly recommend this one! : ' + random.choice(en_healthfood()) + random.choice(sticker()) + '```')
+        await ctx.send('```We highly recommend this one! : ' + en_healthfood() + sticker() + '```')
     @bot.command()
     async def fastfood(ctx):
-        await ctx.send('```' + random.choice(en_words()) + random.choice(en_fastfood()) + random.choice(sticker()) + "\n" \
+        await ctx.send('```' + en_words() + en_fastfood() + sticker() + "\n" \
         + "(This kind of food is unhealthy and will negatively affect your health. Don't eat too often <3) ```")
     @bot.command()
     async def savory(ctx):
-        await ctx.send("```" + random.choice(en_words()) + random.choice(en_savory()) + random.choice(sticker()) + "```")
+        await ctx.send("```" + en_words() + en_savory() + sticker() + "```")
     @bot.command()
     async def buffet(ctx):
-        await ctx.send("```" + random.choice(en_words()) + random.choice(en_fbuffet()) + random.choice(sticker()) + "```")
+        await ctx.send("```" + en_words() + en_fbuffet() + sticker() + "```")
     @bot.command()
     async def sweets(ctx):
-        await ctx.send('```' + random.choice(en_words()) + random.choice(en_sweets('sweet')) + random.choice(sticker()) + '```')
+        await ctx.send('```' + en_words() + en_sweets() + sticker() + '```')
     @bot.command()
     async def drinks(ctx):
-        await ctx.send('```' + random.choice(en_words()) + random.choice(en_sweets('drinks')) + random.choice(sticker()) + "```")
+        await ctx.send('```' + en_words() + en_drinks() + sticker() + "```")
+    @bot.command()
+    async def fruits(ctx):
+        await ctx.send('```' + en_words() + en_fruits() + sticker() + "```")
 
     bot.run(token)
-
 main()
