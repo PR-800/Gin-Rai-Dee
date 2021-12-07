@@ -38,7 +38,7 @@ def th_fbuffet():
 def th_fast_food():
     """สุ่มอาหาร Fast_food"""
     result = firebase.get('/TEST DATABASE/FIREBASE', '')
-    return random.choice(result['-MqIG8r4S7-KfOQofd5l'])
+    return random.choice(result['-MqJGglyeYE6ccXqkdXH'])
 
 def th_words():
     """สุ่มคำพูด"""
@@ -79,7 +79,7 @@ def en_words():
 def en_fastfood():
     """random fastfood"""
     result = firebase.get('/TEST DATABASE/FIREBASE', '')
-    return random.choice(result['-MqII5U4sMrU8_5Iu5Ik'])
+    return random.choice(result['-MqJGqEVk-_kfNSf6066'])
 
 def en_healthfood():
     """random healthfood"""
