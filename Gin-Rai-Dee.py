@@ -130,6 +130,9 @@ def main():
     @bot.command()
     async def cal(ctx):
         await ctx.send('https://i.postimg.cc/SRDxcPGd/calories.jpg')
+    @bot.command()
+    async def bmi(ctx):
+        await ctx.send('https://i.postimg.cc/bY6zJ0s1/bmi.jpg')
         
     #THAI
     @bot.command()
