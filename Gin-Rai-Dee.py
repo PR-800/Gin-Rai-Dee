@@ -120,11 +120,16 @@ def main():
     @bot.command()
     async def help(ctx):
         await ctx.send('```ชุดคำสั่งสำหรับเรียกใช้งานบอทจะขึ้นต้นด้วย g! เสมอ โดยจะมีหัวข้อหลักและย่อย ดังนี้\
-            \n🥗  g! อาหารคลีน\n🍔  g! ฟาสต์ฟู้ด\n🍲  g! บุฟเฟ่ต์\n🍛  g! ข้าว\n🍜  g! เส้น\n🍰  g! ขนมหวาน\
-            \n☕  g! เครื่องดื่ม\n🍎  g! ผลไม้\n\
+            \n🥗  g! อาหารคลีน\n🍔  g! ฟาสต์ฟู้ด\n🍲  g! บุฟเฟ่ต์\n🍛  g! ข้าว\n🍜  g! เส้น\
+            \n🍰  g! ขนมหวาน\n☕  g! เครื่องดื่ม\n🍎  g! ผลไม้\n\
             \nBot commands for Gin-Rai-Dee always begin with g! as follows:\n🥗  g! cleanfood\
             \n🍔  g! fastfood\n🍲  g! buffet\n🍛  g! savory\n🍰  g! sweets\n☕  g! drinks\
-            \n🍎  g! fruits```')
+            \n🍎  g! fruits\n\nสนใจดูปริมาณแคลอรี่ที่ควรได้รับต่อวันไหม? สามารถใช้คำสั่งนี้ได้เลย!\
+            \nWant to know how much calories you should get per day? Try this command!:\
+            \n💬  g! cal\n\nสนใจเทียบค่าดัชนีมวลกายไหม? สามารถใช้คำสั่งนี้ได้เลย!\
+            \nWant to check your BMI? Try this command!\n💬  g! bmi\n\
+            \nสนใจดูตารางอาหารแต่ละหมู่ไหม? สามารถใช้คำสั่งนี้ได้เลย!\
+            \nWant to see the 5 food group? Try this command!\n💬  g! groups```')
         
     #OTHERS
     @bot.command()
@@ -133,6 +138,9 @@ def main():
     @bot.command()
     async def bmi(ctx):
         await ctx.send('https://i.postimg.cc/bY6zJ0s1/bmi.jpg')
+    @bot.command()
+    async def groups(ctx):
+        await ctx.send('https://i.postimg.cc/N0FXJ3dL/Groups.jpg')
         
     #THAI
     @bot.command()
