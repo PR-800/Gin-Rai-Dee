@@ -129,7 +129,7 @@ def main():
     #OTHERS
     @bot.command()
     async def cal(ctx):
-        await ctx.send('https://i.postimg.cc/ZqJgpgQn/1.jpg')
+        await ctx.send('https://i.postimg.cc/SRDxcPGd/calories.jpg')
         
     #THAI
     @bot.command()
