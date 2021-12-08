@@ -125,7 +125,12 @@ def main():
             \nBot commands for Gin-Rai-Dee always begin with g! as follows:\n🥗  g! cleanfood\
             \n🍔  g! fastfood\n🍲  g! buffet\n🍛  g! savory\n🍰  g! sweets\n☕  g! drinks\
             \n🍎  g! fruits```')
-
+        
+    #OTHERS
+    @bot.command()
+    async def cal(ctx):
+        await ctx.send('https://i.postimg.cc/ZqJgpgQn/1.jpg')
+        
     #THAI
     @bot.command()
     async def อาหารคลีน(ctx):
